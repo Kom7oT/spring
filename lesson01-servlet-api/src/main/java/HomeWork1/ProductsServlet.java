@@ -50,7 +50,6 @@ public class ProductsServlet extends HttpServlet {
             }
         } else {
             String product = req.getPathInfo();
-
             Product selectedItem = productRepository.findById(Long.parseLong(product.substring(1)));
             wr.println("<tr>");
             wr.println("<td>" + selectedItem.getId() + "</a></td>");
