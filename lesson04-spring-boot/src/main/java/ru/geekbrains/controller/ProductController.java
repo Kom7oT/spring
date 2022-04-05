@@ -9,6 +9,7 @@ import ru.geekbrains.persist.Product;
 import ru.geekbrains.persist.ProductRepository;
 
 import javax.naming.Binding;
+import javax.validation.Valid;
 
 @RequestMapping("/products")
 @Controller
@@ -41,7 +42,10 @@ public class ProductController {
     }
 
     @PostMapping
-    public String save(Product product, BindingResult binding) {
+    public String save(@Valid Product product, BindingResult binding) {
+        if (binding.hasErrors()){
+            return "product_form";
+        }
         productRepository.save(product);
         return "redirect:/products";
     }

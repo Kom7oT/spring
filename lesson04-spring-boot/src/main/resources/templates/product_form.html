@@ -36,12 +36,16 @@
     <div class="row py-2">
         <div class="col-12">
             <form th:action="@{/products}" th:method="post" th:object="${product}">
-                <input th:field="*{id}" type="hidden" id="id" name="id" >
+                <input th:field="*{id}" type="hidden" id="id" name="id">
                 <div class="form-group">
                     <label>Title</label>
-                    <input th:field="*{title}" type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+                    <input th:field="*{title}" type="text" class="form-control" id="title" name="title"
+                           placeholder="Enter title">
+                    <p class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
                     <label>Price</label>
-                    <input th:field="*{price}" type="text" class="form-control" id="price" name="title" placeholder="Enter price">
+                    <input th:field="*{price}" type="text" class="form-control" id="price" name="price"
+                           placeholder="Enter price">
+                    <p class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

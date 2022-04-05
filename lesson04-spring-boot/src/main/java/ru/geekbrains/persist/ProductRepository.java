@@ -18,9 +18,9 @@ public class ProductRepository {
 
     @PostConstruct
     public void init() {
-        this.save(new Product( "Product 1", 3450.23));
+        this.save(new Product( "Product 1", 3450.25));
         this.save(new Product( "Product 2", 3450.23));
-        this.save(new Product( "Product 3", 3450.23));
+        this.save(new Product( "Product 3", 33450.23));
         this.save(new Product( "Product 4", 3450.23));
         this.save(new Product( "Product 5", 3450.23));
 

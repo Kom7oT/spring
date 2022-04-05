@@ -1,10 +1,19 @@
 package ru.geekbrains.persist;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class Product {
 
     private Long id;
 
+    @NotBlank
     private String title;
+
+    @Min(0)
+    @Max(100000)
     private Double price;
 
     public Product(String title, Double price) {
