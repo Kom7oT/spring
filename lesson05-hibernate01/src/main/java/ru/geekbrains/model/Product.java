@@ -50,7 +50,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Product{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", price='" + price + '\'' +
