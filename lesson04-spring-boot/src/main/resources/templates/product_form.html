@@ -44,7 +44,7 @@
                     <p class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
                     <label>Price</label>
                     <input th:field="*{price}" type="text" class="form-control" id="price" name="price"
-                           placeholder="Enter price">
+                           placeholder="Enter price"/>
                     <p class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

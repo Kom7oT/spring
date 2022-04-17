@@ -45,15 +45,15 @@ public class ProductController {
     public String save(@Valid Product product, BindingResult binding) {
         if (binding.hasErrors()){
             return "product_form";
-        }
-        productRepository.save(product);
+        } else
+        productRepository.saveAndFlush(product);
         return "redirect:/products";
     }
 
     //Удаление товара
     @GetMapping("/delete")
     public String delete(@RequestParam long id, Model model) {
-        productRepository.delete(id);
+        productRepository.deleteById(id);
         listPage(model);
         return "products";
     }

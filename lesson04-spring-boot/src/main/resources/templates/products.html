@@ -34,6 +34,19 @@
 
 <div class="container">
     <div class="row py-2">
+        <div class="col-12 mt-4">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="priceFilter" class="sr-only">Price filter</label>
+                    <input type="text" class="form-control" id="priceFilter" th:value="${param.price}"
+                           name="priceFilter" placeholder="Price filter">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Less</button>
+                <button type="submit" class="btn btn-primary mb-2">Larger</button>
+                <button type="submit" class="btn btn-primary mb-2">Between</button>
+            </form>
+        </div>
         <div class="col-12">
             <!-- Добавление товара -->
             <a class="btn btn-primary" th:href="@{/products/new}">Add Product</a>
