@@ -8,11 +8,11 @@
         <version>2.6.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ru.geekbrain</groupId>
-    <artifactId>lesson-04-spring-boot</artifactId>
+    <groupId>ru.geekbrains</groupId>
+    <artifactId>lesson04-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lesson-04-spring-boot</name>
-    <description>lesson-04-spring-boot</description>
+    <description>lesson04-spring-boot</description>
     <properties>
         <java.version>11</java.version>
     </properties>
