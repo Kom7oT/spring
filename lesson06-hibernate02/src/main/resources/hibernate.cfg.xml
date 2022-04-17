@@ -1,6 +1,6 @@
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        <!DOCTYPE hibernate-configuration PUBLIC
+                "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -18,5 +18,6 @@
 
         <mapping class="ru.geekbrains.model.Customer"/>
         <mapping class="ru.geekbrains.model.Product"/>
+        <mapping class="ru.geekbrains.model.OrderList"/>
     </session-factory>
 </hibernate-configuration>

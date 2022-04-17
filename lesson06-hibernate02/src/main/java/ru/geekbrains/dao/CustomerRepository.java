@@ -6,11 +6,11 @@ import javax.persistence.EntityManagerFactory;
 import java.util.List;
 import java.util.Optional;
 
-public class CustomerDao {
+public class CustomerRepository {
 
     private final EntityManagerFactory emFactory;
 
-    public CustomerDao(EntityManagerFactory emFactory) {
+    public CustomerRepository(EntityManagerFactory emFactory) {
         this.emFactory = emFactory;
     }
 
