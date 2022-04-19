@@ -1,30 +1,31 @@
-package ru.geekbrains.persist;
-import javax.persistence.*;
+package ru.geekbrains.dto;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "products")
-public class Product {
+public class ProductDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title")
+    @NotBlank
     private String title;
 
-    @Column(name = "price")
+    @NotBlank
+    @Min(0)
+    @Max(100000)
     private BigDecimal price;
 
-    public Product() {
+    public ProductDto() {
     }
 
-    public Product(String title, BigDecimal price) {
+    public ProductDto(String title, BigDecimal price){
         this.title = title;
         this.price = price;
     }
 
-    public Product(Long id, String title, BigDecimal price) {
+    public ProductDto(Long id, String title, BigDecimal price) {
         this.id = id;
         this.title = title;
         this.price = price;

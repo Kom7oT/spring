@@ -56,9 +56,15 @@
             <table class="table table-bordered my-2">
                 <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Id
+                        <a href="#"><i class="fa fa-sort-down"></i></a>
+                    </th>
+                    <th scope="col">Title
+                        <a href="#"><i class="fa fa-sort-down"></i></a>
+                    </th>
+                    <th scope="col">Price
+                        <a href="#"><i class="fa fa-sort-down"></i></a>
+                    </th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
@@ -76,6 +82,32 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <div th:unless="${products.isEmpty()}" class="col-12">
+            <nav aria-label="...">
+
+                <!-- Pagination -->
+                <ul class="pagination">
+
+                    <li th:classappend="${products.getNumber() ==0} ? 'disabled'" class="page-item">
+                        <a class="page-link" th:href="@{/products(page=${products.number}, size=${products.size})}"
+                           href="#" tabindex="-1">Previous</a>
+                    </li>
+
+                    <li th:each="num : ${#numbers.sequence(1, products.totalPages)}"
+                        th:classappend="${num == products.number + 1} ? 'active'"
+                        class="page-item">
+                        <a class="page-link" th:href="@{/products(page=${num}, size=${products.size})}">[[${num}]]
+                            <span th:if="${num == products.number + 1}" class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li th:classappend="${products.getNumber() == products.getSize()} ? 'disabled'" class="page-item">
+                        <a class="page-link" th:href="@{/products(page=${products.number + 2}, size=${products.size})}"
+                           href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
