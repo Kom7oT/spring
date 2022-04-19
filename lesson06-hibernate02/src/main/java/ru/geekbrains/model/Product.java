@@ -20,8 +20,13 @@ public class Product {
     public Product() {
     }
 
-    @ManyToOne
-    private Customer customer;
+    public Product(String title, int price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    @OneToMany(mappedBy = "product")
+    private List<OrderList> orderList;
 
     public Long getId() {
         return id;

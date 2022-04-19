@@ -17,13 +17,13 @@ public class Main {
         EntityManager em = emFactory.createEntityManager();
 
 //         //INSERT
-//        em.getTransaction().begin();
-//
-//        em.persist(new Product("Product 1",  4000));
-//        em.persist(new Product("Product 2",  40123));
-//        em.persist(new Product("Product 3",  5454));
-//
-//        em.getTransaction().commit();
+        em.getTransaction().begin();
+
+        em.persist(new Product("Product 1",  4000));
+        em.persist(new Product("Product 2",  40123));
+        em.persist(new Product("Product 3",  5454));
+
+        em.getTransaction().commit();
 
         // SELECT
 //        User user = em.find(User.class, 1L);
@@ -63,7 +63,7 @@ public class Main {
 
 //        em.getTransaction().commit();
 ProductDao product = new ProductDao(emFactory);
-product.deleteById(3);
+product.findById(5);
         em.close();
 
         emFactory.close();

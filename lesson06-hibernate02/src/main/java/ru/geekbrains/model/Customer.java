@@ -21,7 +21,7 @@ public class Customer {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             orphanRemoval = true
     )
-    private List<Product> products;
+    private List<OrderList> orderList;
 
     public Long getId() {
         return id;

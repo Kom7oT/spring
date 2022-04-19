@@ -7,10 +7,10 @@ import javax.persistence.EntityManagerFactory;
 import java.util.List;
 import java.util.Optional;
 
-public class ProductDao {
+public class ProductRepository {
     private final EntityManagerFactory emFactory;
 
-    public ProductDao(EntityManagerFactory emFactory) {
+    public ProductRepository(EntityManagerFactory emFactory) {
         this.emFactory = emFactory;
     }
 

@@ -11,7 +11,7 @@
     <groupId>ru.geekbrains</groupId>
     <artifactId>lesson04-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lesson04-spring-boot</name>
+    <name>lesson-04-spring-boot</name>
     <description>lesson04-spring-boot</description>
     <properties>
         <java.version>11</java.version>
@@ -29,6 +29,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
