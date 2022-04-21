@@ -55,9 +55,9 @@ public class ProductController {
     }
 
     //Удаление товара
-    @GetMapping("/delete")
-    public String delete(@RequestParam long id, Model model) {
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable long id) {
         productService.deleteById(id);
-        return "products";
+        return "redirect:/products";
     }
 }
