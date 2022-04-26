@@ -9,7 +9,6 @@ import ru.geekbrains.dto.ProductDto;
 import ru.geekbrains.persist.Product;
 import ru.geekbrains.persist.ProductRepository;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -22,8 +21,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Page<ProductDto> findAll(Integer page, Integer size) {
-        return productRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Order.asc("id"))))
+    public Page<ProductDto> findAll(Integer page, Integer size, String sortField) {
+        return productRepository.findAll(PageRequest.of(page, size, Sort.by(sortField)))
                 .map(ProductServiceImpl::productToDto);
     }
 
@@ -33,8 +32,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void save(ProductDto product) {
-        productToDto(productRepository.save(
+    public ProductDto save(ProductDto product) {
+       return productToDto(productRepository.save(
                 new Product(
                         product.getId(),
                         product.getTitle(),

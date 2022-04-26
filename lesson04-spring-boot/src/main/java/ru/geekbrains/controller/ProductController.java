@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.dto.ProductDto;
 import ru.geekbrains.service.ProductService;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 @RequestMapping("/products")
@@ -25,10 +24,14 @@ public class ProductController {
     @GetMapping
     public String listPage(@RequestParam Optional<Integer> page,
                            @RequestParam Optional<Integer> size,
+                           @RequestParam Optional<String> sortField,
                            Model model) {
         Integer pageValue = page.orElse(1) - 1;
         Integer sizeValue = size.orElse(3);
-        model.addAttribute("products", productService.findAll(pageValue, sizeValue));
+        String sortFieldValue = sortField
+                .filter(s -> !s.isBlank())
+                .orElse("id");
+        model.addAttribute("products", productService.findAll(pageValue, sizeValue, sortFieldValue));
         return "products";
     }
 
