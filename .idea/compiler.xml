@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="lesson01-servlet-api" />
         <module name="lesson-01-servlet-api" />
-        <module name="lesson03-spring-mvc" />
         <module name="lesson-05-hibernate" />
         <module name="lesson04-spring-boot" />
+        <module name="lesson-03-spring-mvc" />
+        <module name="lesson03-spring-mvc" />
         <module name="lesson06-hibernate02" />
       </profile>
     </annotationProcessing>
